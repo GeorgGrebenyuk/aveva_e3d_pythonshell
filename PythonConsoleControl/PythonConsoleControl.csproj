@@ -4,7 +4,7 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWPF>true</UseWPF>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <Configurations>Debug Nc22;Release Nc22;Debug Nc23;Release Nc23;Installer</Configurations>
+    <Configurations>DebugAE3D_21;ReleaseAE3D_21;Debug Nc23;Release Nc23;Installer</Configurations>
     <Platforms>x64</Platforms>
 	</PropertyGroup>
   <Choose>
@@ -22,7 +22,7 @@
         <PackageReference Include="Mono.Posix.NETStandard" Version="1.0.0" />
       </ItemGroup>
     </When>
-    <When Condition="$(Configuration.Contains('Nc22'))">
+    <When Condition="$(Configuration.Contains('AE3D_21'))">
       <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
       </PropertyGroup>

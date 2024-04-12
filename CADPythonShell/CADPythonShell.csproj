@@ -7,7 +7,7 @@
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
 		<UseWPF>true</UseWPF>
-		<Configurations>Debug Nc22;Release Nc22;Debug Nc23;Release Nc23;Installer</Configurations>
+		<Configurations>DebugAE3D_21;ReleaseAE3D_21;Debug Nc23;Release Nc23;Installer</Configurations>
 		<GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     
     <Platforms>x64</Platforms>
@@ -25,31 +25,11 @@
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         
       </PropertyGroup>
-      <ItemGroup>
-        <Reference Include="hostdbmgd">
-          <HintPath>..\ReferencedAssemblies\Nc23\hostdbmgd.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="hostmgd">
-          <HintPath>..\ReferencedAssemblies\Nc23\hostmgd.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
     </When>
-    <When Condition="$(Configuration.Contains('Nc22'))">
+    <When Condition="$(Configuration.Contains('AE3D_21'))">
       <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
       </PropertyGroup>
-      <ItemGroup>
-        <Reference Include="hostdbmgd">
-          <HintPath>..\ReferencedAssemblies\Nc22\hostdbmgd.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="hostmgd">
-          <HintPath>..\ReferencedAssemblies\Nc22\hostmgd.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-      </ItemGroup>
     </When>
   </Choose>
 	<!--<PropertyGroup>
@@ -214,7 +194,6 @@
 		</BootstrapperPackage>
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\CADCommands\CADCommands.csproj" />
 		<ProjectReference Include="..\CADRuntime\CADRuntime.csproj" />
     <!--<ProjectReference Include="..\MgdDbgLibrary\MgdDbg.csproj" />-->
 		<ProjectReference Include="..\PythonConsoleControl\PythonConsoleControl.csproj" />
@@ -223,6 +202,24 @@
 		<PackageReference Include="IronPython" Version="3.4.1" />
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="Aveva.ApplicationFramework">
+	    <HintPath>..\ReferencedAssemblies\2.1\Aveva.ApplicationFramework.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="Aveva.ApplicationFramework.Presentation">
+	    <HintPath>..\ReferencedAssemblies\2.1\Aveva.ApplicationFramework.Presentation.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="GridControl">
+	    <HintPath>..\ReferencedAssemblies\2.1\GridControl.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	  <Reference Include="PMLNet">
+	    <HintPath>..\ReferencedAssemblies\2.1\PMLNet.dll</HintPath>
+	    <Private>False</Private>
+	  </Reference>
+	</ItemGroup>
 	<PropertyGroup />
 	<PropertyGroup>
 	  <PlatformTarget>x64</PlatformTarget>
@@ -230,10 +227,6 @@
 	</PropertyGroup>
 	<PropertyGroup>
     <PostBuildEvent>
-      xcopy "$(SolutionDir)CADPythonShell\NcadIntegrating\NcPythonShell.cfg"				"$(SolutionDir)bin\$(Configuration)_$(Platform)\" /Y /I /E
-      xcopy "$(SolutionDir)CADPythonShell\NcadIntegrating\NcPS.cuix"								"$(SolutionDir)bin\$(Configuration)_$(Platform)\" /Y /I /E
-      xcopy "$(SolutionDir)CADPythonShell\NcadIntegrating\nCADPythonShell.package"	"$(SolutionDir)bin\$(Configuration)_$(Platform)\" /Y /I /E
-      xcopy "$(SolutionDir)CADPythonShell\Resources\*.bmp" "$(SolutionDir)bin\$(Configuration)_$(Platform)\Icons\" /Y /I /E
       
     </PostBuildEvent>
 	</PropertyGroup>

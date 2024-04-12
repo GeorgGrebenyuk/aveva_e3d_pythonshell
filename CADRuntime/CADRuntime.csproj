@@ -7,7 +7,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
-    <Configurations>Debug Nc22;Release Nc22;Debug Nc23;Release Nc23;Installer</Configurations>
+    <Configurations>DebugAE3D_21;ReleaseAE3D_21;Debug Nc23;Release Nc23;Installer</Configurations>
     <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
     <Platforms>x64</Platforms>
   </PropertyGroup>
@@ -22,32 +22,11 @@
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
       </PropertyGroup>
-      <ItemGroup>
-        <!--<PackageReference Include="Mono.Posix.NETStandard" Version="1.0.0" />-->
-        <Reference Include="hostdbmgd">
-          <HintPath>..\ReferencedAssemblies\Nc23\hostdbmgd.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="hostmgd">
-          <HintPath>..\ReferencedAssemblies\Nc23\hostmgd.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
     </When>
-    <When Condition="$(Configuration.Contains('Nc22'))">
+    <When Condition="$(Configuration.Contains('AE3D_21'))">
       <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
       </PropertyGroup>
-      <ItemGroup>
-        <Reference Include="hostdbmgd">
-          <HintPath>..\ReferencedAssemblies\Nc22\hostdbmgd.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="hostmgd">
-          <HintPath>..\ReferencedAssemblies\Nc22\hostmgd.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
     </When>
   </Choose>
 	<PropertyGroup>

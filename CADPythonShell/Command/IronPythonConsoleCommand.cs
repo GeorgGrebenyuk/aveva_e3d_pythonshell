@@ -1,12 +1,9 @@
-﻿using HostMgd.ApplicationServices;
-using Teigha.Runtime;
-using CADPythonShell.App;
+﻿using CADPythonShell.App;
 using CADRuntime;
 using Microsoft.Scripting;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Threading;
-using Application = HostMgd.ApplicationServices.Application;
 using Exception = System.Exception;
 using Forms = System.Windows.Forms;
 
@@ -16,7 +13,6 @@ namespace CADPythonShell.Command
     {
         private static Guid ps_Attrs_id = Guid.Parse("{1f6e3f8d-c3ed-4e53-acc9-5113f6d615ca" +
             "}");
-        private static HostMgd.Windows.PaletteSet ps_ConsolePalette;
         private static IronPythonConsole p_Console;
 
         /// <summary>
@@ -25,7 +21,7 @@ namespace CADPythonShell.Command
         /// <returns></returns>
         public override void Execute()
         {
-            Document doc = Application.DocumentManager.MdiActiveDocument;
+            //Document doc = Application.DocumentManager.MdiActiveDocument;
             //load the application
             if (!CADPythonShellApplication.applicationLoaded)
             {
@@ -91,9 +87,9 @@ namespace CADPythonShell.Command
                 });
             });
             gui.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            WindowInteropHelper helper = new WindowInteropHelper(gui);
-            IntPtr hander = Application.MainWindow.Handle;
-            helper.Owner = hander;
+            //WindowInteropHelper helper = new WindowInteropHelper(gui);
+            //IntPtr hander =Application.MainWindow.Handle;
+            //helper.Owner = hander;
             gui.Show();
         }
         

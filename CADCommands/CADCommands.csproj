@@ -37,16 +37,6 @@
       <PropertyGroup>
         <TargetFramework>net48</TargetFramework>
       </PropertyGroup>
-      <ItemGroup>
-        <Reference Include="hostdbmgd">
-          <HintPath>..\ReferencedAssemblies\Nc22\hostdbmgd.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-        <Reference Include="hostmgd">
-          <HintPath>..\ReferencedAssemblies\Nc22\hostmgd.dll</HintPath>
-          <Private>True</Private>
-        </Reference>
-      </ItemGroup>
     </When>
   </Choose>
 

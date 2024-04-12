@@ -139,7 +139,7 @@ namespace CADRuntime
             AddEmbeddedLib(engine);
 
             // reference Autocad or Civil3D Api Document and Application
-            engine.Runtime.LoadAssembly(typeof(HostMgd.ApplicationServices.Document).Assembly);
+            //TODO: add e3d libs engine.Runtime.LoadAssembly(typeof(HostMgd.ApplicationServices.Document).Assembly);
             //engine.Runtime.LoadAssembly(typeof(CADSnoop.SnoopCommand).Assembly);
             // also, allow access to the RPS internals
             engine.Runtime.LoadAssembly(typeof(ScriptExecutor).Assembly);

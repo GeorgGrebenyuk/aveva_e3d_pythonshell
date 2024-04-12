@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CADRuntime", "CADRuntime\CADRuntime.csproj", "{5A1F539C-4ECE-4B43-ACA2-5867832B7684}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CADPythonShell", "CADPythonShell\CADPythonShell.csproj", "{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PythonConsoleControl", "PythonConsoleControl\PythonConsoleControl.csproj", "{76C67875-2FFC-4414-85C7-841FF65BEE3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Nc23|x64 = Debug Nc23|x64
+		DebugAE3D_21|x64 = DebugAE3D_21|x64
+		Installer|x64 = Installer|x64
+		Release Nc23|x64 = Release Nc23|x64
+		ReleaseAE3D_21|x64 = ReleaseAE3D_21|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.Debug Nc23|x64.ActiveCfg = Debug Nc23|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.Debug Nc23|x64.Build.0 = Debug Nc23|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.DebugAE3D_21|x64.ActiveCfg = DebugAE3D_21|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.DebugAE3D_21|x64.Build.0 = DebugAE3D_21|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.Installer|x64.ActiveCfg = Installer|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.Installer|x64.Build.0 = Installer|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.Release Nc23|x64.ActiveCfg = Release Nc23|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.Release Nc23|x64.Build.0 = Release Nc23|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.ReleaseAE3D_21|x64.ActiveCfg = ReleaseAE3D_21|x64
+		{5A1F539C-4ECE-4B43-ACA2-5867832B7684}.ReleaseAE3D_21|x64.Build.0 = ReleaseAE3D_21|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.Debug Nc23|x64.ActiveCfg = Debug Nc23|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.Debug Nc23|x64.Build.0 = Debug Nc23|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.DebugAE3D_21|x64.ActiveCfg = DebugAE3D_21|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.DebugAE3D_21|x64.Build.0 = DebugAE3D_21|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.Installer|x64.ActiveCfg = Installer|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.Installer|x64.Build.0 = Installer|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.Release Nc23|x64.ActiveCfg = Release Nc23|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.Release Nc23|x64.Build.0 = Release Nc23|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.ReleaseAE3D_21|x64.ActiveCfg = ReleaseAE3D_21|x64
+		{B8FC7377-BBDF-46C3-A051-DC6A27E85D43}.ReleaseAE3D_21|x64.Build.0 = ReleaseAE3D_21|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.Debug Nc23|x64.ActiveCfg = Debug Nc23|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.Debug Nc23|x64.Build.0 = Debug Nc23|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.DebugAE3D_21|x64.ActiveCfg = DebugAE3D_21|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.DebugAE3D_21|x64.Build.0 = DebugAE3D_21|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.Installer|x64.ActiveCfg = Installer|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.Installer|x64.Build.0 = Installer|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.Release Nc23|x64.ActiveCfg = Release Nc23|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.Release Nc23|x64.Build.0 = Release Nc23|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.ReleaseAE3D_21|x64.ActiveCfg = ReleaseAE3D_21|x64
+		{76C67875-2FFC-4414-85C7-841FF65BEE3E}.ReleaseAE3D_21|x64.Build.0 = ReleaseAE3D_21|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3113DEDA-7C08-490C-9FED-48B6770DA0E9}
+	EndGlobalSection
+EndGlobal

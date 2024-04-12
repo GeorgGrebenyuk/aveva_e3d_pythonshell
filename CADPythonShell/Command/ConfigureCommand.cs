@@ -1,6 +1,4 @@
-﻿using Teigha.Runtime;
-using CADPythonShell.App;
-using Application = HostMgd.ApplicationServices.Application;
+﻿using CADPythonShell.App;
 
 namespace CADPythonShell.Command
 {
@@ -10,20 +8,20 @@ namespace CADPythonShell.Command
 
     public class ConfigureCommand : ICadCommand
     {
-        [CommandMethod("PythonShellSetting")]
+        
         public override void Execute()
         {
-            //load the application
-            if (!CADPythonShellApplication.applicationLoaded)
-            {
-                CADPythonShellApplication.OnLoaded();
-            }
+            ////load the application
+            //if (!CADPythonShellApplication.applicationLoaded)
+            //{
+            //    CADPythonShellApplication.OnLoaded();
+            //}
 
-            var dialog = new ConfigureCommandsForm();
-            dialog.StartPosition = FormStartPosition.CenterScreen;
-            NativeWindow nativeWindow = new NativeWindow();
-            nativeWindow.AssignHandle(Application.MainWindow.Handle);
-            dialog.ShowDialog(nativeWindow);
+            //var dialog = new ConfigureCommandsForm();
+            //dialog.StartPosition = FormStartPosition.CenterScreen;
+            //NativeWindow nativeWindow = new NativeWindow();
+            //nativeWindow.AssignHandle(Application.MainWindow.Handle);
+            //dialog.ShowDialog(nativeWindow);
         }
     }
 }

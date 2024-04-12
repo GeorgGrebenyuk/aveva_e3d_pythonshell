@@ -1,33 +1,101 @@
-﻿using Teigha.Runtime;
-using CADPythonShell.Command;
+﻿using CADPythonShell.Command;
+
+
+using Aveva.ApplicationFramework;
+using Aveva.ApplicationFramework.Presentation;
+using Aveva.Core.PMLNet;
 
 namespace CADPythonShell.App
 {
-    public class IronPythonConsoleApp : IExtensionApplication
+    public class IronPythonConsoleApp : IAddin
     {
-        [CommandMethod("NPS_Run_NPS")]
-        public void NPS_Run_NPS()
+        //обьявляем переменные
+        public static ServiceManager ServicManag;
+        public static CommandManager CommadManag;
+        public static CommandBarManager CommandBarManag;
+        public static CommandBar MyToolBar;
+
+        public string Name
+        { get { return "Aveva_e3d_PythonConsole"; } }
+
+        public string Description { get { return "Python plugin for AVEVA e3D"; } }
+
+        public void Start(ServiceManager serviceManager)
         {
-            //new RelayCommand(new IronPythonConsoleCommand().Execute);
+            ServicManag = serviceManager;
+            CommadManag = (CommandManager)ServicManag.GetService(typeof(CommandManager));
+            //CommandBarManag = (CommandBarManager)ServicManag.GetService(typeof(CommandBarManager));
+
+            DockedWindowCmd doc2 = new DockedWindowCmd();
+
+            CommadManag.Commands.Add(doc2);
+            //CommadManag.Commands.Add(new CommandFilter("IronPythonConsoleCommand"));
+            //CommadManag.Commands.Add(new CommandFilter("ConfigureCommand"));
+            //////////////////////
+            //panel
+
+            //MyToolBar = CommandBarManag.CommandBars.AddCommandBar("Панелька");
+            ////buttons
+            //CommandBarManag.RootTools.AddButtonTool("key1", "IronPythonConsoleCommand", null, new CommandFilter("IronPythonConsoleCommand"));
+            //MyToolBar.Tools.AddTool("key1");
+            //CommandBarManag.RootTools.AddButtonTool("key2", "ConfigureCommand", null, new CommandFilter("ConfigureCommand"));
+            //MyToolBar.Tools.AddTool("key2");
+        }
+
+        public void Stop()
+        {
+            
+        }
+    }
+    public class DockedWindowCmd : Aveva.ApplicationFramework.Presentation.Command
+    {
+        DockedWindow _myWindow;
+        public DockedWindowCmd ()
+        {
+            base.Key = "IronPythonConsoleAddin.Form";
+
+            
+        }
+        public override void Execute()
+        {
             new IronPythonConsoleCommand().Execute();
-            //IronPythonConsoleCommand.RunConsole();
+        }
+    }
+    //panel button check
+    //[PMLNetCallable()]
+    public class CommandFilter : Aveva.ApplicationFramework.Presentation.Command
+    {
+
+        public CommandFilter()
+        {
         }
 
-        [CommandMethod("NPS_Configure_NPS")]
-        public void NPS_Configure_NPS()
+        public CommandFilter(string key)
         {
-            //new RelayCommand(new ConfigureCommand().Execute);
-            new ConfigureCommand().Execute();
+            this.Value = key;
         }
-
-        public void Initialize()
+        [PMLNetCallable()]
+        public override void Execute()
         {
-            //throw new NotImplementedException();
-        }
+            string tester = (string)this.Value;
+            try
+            {
+                switch (tester)
+                {
 
-        public void Terminate()
-        {
-            //throw new NotImplementedException();
+                    case "IronPythonConsoleCommand":
+                        {
+                            new IronPythonConsoleCommand().Execute();
+                        }
+                        break;
+                    case "IronPythonConsoleAddin.ConfigureCommand":
+                        {
+                            new ConfigureCommand().Execute();
+                        }
+                        break;
+                }
+            }
+            catch { }
         }
     }
 }
